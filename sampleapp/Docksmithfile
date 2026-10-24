@@ -1,0 +1,7 @@
+FROM alpine:3.18
+WORKDIR /app
+ENV APP_NAME=DocksmithDemo
+COPY main.py /app
+RUN echo "Build complete for $APP_NAME"
+CMD ["/bin/sh", "-c", "echo Hello from $APP_NAME && echo WorkingDir: $(pwd) && ls /app && echo --- && touch /tmp/testfile_in_container && echo Written testfile inside container"]
+
